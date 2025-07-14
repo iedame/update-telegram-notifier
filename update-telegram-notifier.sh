@@ -9,7 +9,8 @@ if [ -f ".env" ]; then
     source .env
     echo "Acquired bot token and chat ID from .env file"
 else
-    echo "No .env file with bot token and chat ID found, you will not receive Telegram notification!"
+    echo "No .env file with bot token and chat ID found, you will not receive Telegram notification! Exiting..."
+    exit 1
 fi
 
 IFS=';' read updates security_updates < <(/usr/lib/update-notifier/apt-check 2>&1)
