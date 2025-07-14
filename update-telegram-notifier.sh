@@ -10,6 +10,7 @@ if [ -f ".env" ]; then
     echo "Acquired bot token and chat ID from .env file"
 else
     echo "No .env file with bot token and chat ID found, you will not receive Telegram notification! Exiting..."
+    echo ""
     exit 1
 fi
 
