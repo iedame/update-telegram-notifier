@@ -27,7 +27,7 @@ Follow these steps to set up the Telegram Update Notifier on your Linux server.
 First, clone this repository to your server:
 
 ```bash
-git clone git@github.com:iedame/update-telegram-notifier.git
+git clone https://github.com/iedame/update-telegram-notifier.git
 cd update-telegram-notifier
 ```
 ### 2. Set Up Your Telegram Bot
