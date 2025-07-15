@@ -1,15 +1,18 @@
 #!/bin/bash
 
+# Get the directory where the script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
 # --- Start Logging ---
 # Log the execution timestamp
 echo "--- Update / Reboot Telegram Notifier Script started at $(date) ---"
 
 # Load environment variables from .env if it exists
-if [ -f ".env" ]; then
-    source .env
-    echo "Acquired bot token and chat ID from .env file"
+if [ -f "$SCRIPT_DIR/.env" ]; then
+    source "$SCRIPT_DIR/.env"
+    echo "Acquired bot token and chat ID from $SCRIPT_DIR/.env file"
 else
-    echo "No .env file with bot token and chat ID found, you will not receive Telegram notification! Exiting..."
+    echo "ERROR: No .env file with bot token and chat ID found at $SCRIPT_DIR/.env! Exiting..."
     echo ""
     exit 1
 fi
